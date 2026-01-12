@@ -1,25 +1,8 @@
-# Eclipse, NetBeans y otros IDEs
-/.idea/
-/nbproject/private/
-/*.iml
-
-# Compilados y dependencias
-/target/
-/build/
-/out/
-/bin/
-
-# Archivos temporales del sistema
-.DS_Store
-Thumbs.db
-
 # Logs
 *.log
 
 # Archivos generados
 *.class
-
-# Archivos de empaquetado
 *.jar
 *.war
 *.ear
@@ -30,7 +13,10 @@ Thumbs.db
 # Maven wrapper
 /.mvn/wrapper/maven-wrapper.properties
 
-# IntelliJ, VSCode
+# IDEs
 *.ipr
 *.iws
 *.vscode/
+.idea/
+nbproject/private/
+*.iml

@@ -1,13 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.josedelriocenteno</groupId>
+
+    <!-- Identidad del proyecto -->
+    <groupId>com.delcenjo</groupId>
     <artifactId>ud5-poo-introduccion</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <name>UD5 POO Introducción</name>
+    <description>Proyecto de introducción a POO - Unidad 5</description>
+
+    <!-- Configuración del compilador -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>21</maven.compiler.release>
-        <exec.mainClass>com.github.josedelriocenteno.ud5.Ud5PooIntroduccion</exec.mainClass>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
+
+    <!-- Dependencias -->
+    <dependencies>
+        <!-- Añade dependencias según necesites -->
+    </dependencies>
 </project>
