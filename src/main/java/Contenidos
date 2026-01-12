@@ -1,0 +1,54 @@
+Tema5_POO_Introduccion/
+│
+├── 1_Clases_Y_Objetos/
+│   ├── ClaseSimple.java                     // Ejemplo muy básico, bien explicado, atributos + métodos
+│   ├── UsoObjeto.java                       // Crear objetos, asignar valores, llamar métodos
+│   └── TiposDeVariables.txt                 // Diferenciar entre los tipos de variables para POO
+│
+├── 2_Atributos_Y_Metodos/
+│   ├── AtribututosMetodos.java              // this, tipos de métodos, atributos de instancia vs clase
+│   └── EjemploEncapsulacion.java            // getters, setters, atributos private, validaciones
+│
+├── 3_Modificadores_Y_Encapsulacion/
+│   ├── ModificadoresAcceso.java             // public, private, protected, default explicado con ejemplos
+│   ├── GettersSettersExplicacion.java       // getter/setter explicados paso a paso y por qué se usan
+│   └── EncapsulacionExplicada.java          // Encapsulación real en práctica con ejemplo completo
+│
+├── 4_Constructores/
+│   ├── ConstructorBasico.java               // Constructor por defecto + explicación completa
+│   └── ConstructorSobrecarga.java           // Sobrecargar constructores, usar this()
+│
+├── 5_Relaciones_Entre_Clases/
+│   ├── Asociacion.java                      // Una clase usa otra de forma débil; ejemplo explicativo
+│   ├── Agregacion.java                      // “Tiene un” pero sin dependencia total
+│   ├── Composicion.java                     // Relación fuerte, vida conjunta de objetos
+│   └── Dependencia.java                     // Uso temporal de otra clase dentro de un método
+│
+├── 6_Herencia/
+│   ├── ClasePadre.java                      // Atributos y métodos base
+│   ├── ClaseHija.java                       // extends, override, super()
+│   └── UsoHerencia.java                     // Ejemplos instanciando y llamando métodos heredados
+│
+├── 7_Polimorfismo/
+│   ├── PolimorfismoBasico.java              // Sobrescritura + comportamiento distinto según objeto
+│   └── UsoPolimorfismo.java                 // Arrays de clase padre, llamadas polimórficas
+│
+├── 8_MetodosImportantes_Object/
+│   ├── ToString_Override.java               // Sobrescritura de toString() correctamente explicada
+│   ├── Equals_HashCode.java                 // Contrato equals-hashCode explicado + ejemplo funcional
+│   ├── Clone_Explicacion.java               // Opcional: cómo funciona clone(), deep vs shallow copy
+│   └── Interfaz_Cloneable.java              // Que clases implementan Clonable, métodos importantes
+│
+├── 9_UML_Basico/                             // Conceptual; va cerca del final
+│   ├── Explicacion_UML.md                    // Introducción a UML, símbolos y lectura de diagramas
+│   ├── EjemploDiagramaClases.png             // Ejemplo de diagrama de clases
+│   └── UML_a_Java.md                         // Convertir UML → código Java
+│
+├── 10_Principios_Diseno_OOP/                 // Conceptos más abstractos
+│   ├── Cohesion_Acoplamiento.md              // Explicar cohesión alta y bajo acoplamiento
+│   ├── Abstraccion_Reutilizacion.md          // Diseño limpio y reutilizable
+│   └── BuenasPracticasOOP.md                 // Nombres, responsabilidades, reglas básicas
+│
+└── 11_Resumen_Y_Ejercicios/
+    ├── ResumenPOO.java                       // TODO el tema resumido, listo para estudiar
+    └── EjerciciosPOO.java                    // Ejercicios con dificultad creciente

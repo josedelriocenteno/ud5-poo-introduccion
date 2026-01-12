@@ -1,0 +1,25 @@
+RESUMEN TIPOS DE VARIABLES EN JAVA
+
+1. Constantes finales (final):
+   - Valores inmutables que no cambian durante la vida del objeto o clase.
+   - Se usan para datos fijos y se definen con la palabra clave final.
+
+2. Atributos de instancia:
+   - Variables que representan el estado propio de cada objeto.
+   - Cada objeto creado tiene su propia copia de estos atributos.
+   - Declarados dentro de la clase pero fuera de métodos.
+
+3. Atributos de clase (static):
+   - Variables compartidas entre todos los objetos de la clase.
+   - Solo existe una copia para toda la clase.
+   - Se accede a ellas mediante el nombre de la clase o de un objeto.
+
+4. Variables locales:
+   - Variables temporales declaradas dentro de métodos o bloques.
+   - Existen solo durante la ejecución del método.
+   - No son accesibles fuera del método donde se declaran.
+
+5. Parámetros (formal y actual):
+   - Variables locales especiales usadas en métodos y constructores.
+   - Reciben valores cuando se llama al método o se crea el objeto.
+   - Sirven para inicializar atributos u operar con datos pasados al método.
