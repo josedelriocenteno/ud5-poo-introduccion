@@ -1,0 +1,36 @@
+# Eclipse, NetBeans y otros IDEs
+/.idea/
+/nbproject/private/
+/*.iml
+
+# Compilados y dependencias
+/target/
+/build/
+/out/
+/bin/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos generados
+*.class
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+
+# Configuraciones locales
+/settings.xml
+
+# Maven wrapper
+/.mvn/wrapper/maven-wrapper.properties
+
+# IntelliJ, VSCode
+*.ipr
+*.iws
+*.vscode/
