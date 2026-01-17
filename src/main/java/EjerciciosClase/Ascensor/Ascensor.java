@@ -1,5 +1,7 @@
 package EjerciciosClase.Ascensor;
 
+import java.util.Objects;
+
 public class Ascensor {
 
     private int piso = 0;
@@ -17,115 +19,102 @@ public class Ascensor {
         this.alarma = false;
     }
 
-    // GETTERS Y SETTERS
-    public int getPiso() {
-        return piso;
-    }
-
-    public int getPisos() {
-        return pisos;
-    }
-
-    public boolean getPuertas() {
-        return puertas;
-    }
-
-    public boolean isAlarma() {
-        return alarma;
-    }
-
-    public double getCapacidad() {
-        return capacidad;
-    }
-
-    public double getOcupacion() {
-        return ocupacion;
-    }
+    // GETTERS (sin cambios)
+    public int getPiso() { return piso; }
+    public int getPisos() { return pisos; }
+    public boolean getPuertas() { return puertas; }
+    public boolean isAlarma() { return alarma; }
+    public double getCapacidad() { return capacidad; }
+    public double getOcupacion() { return ocupacion; }
 
     // PUERTAS
     public void abrirPuertas() {
         puertas = true;
-        System.out.println("Puertas abiertas");
+        System.out.println("🟢 Puertas ABIERTAS - Piso " + piso);
     }
 
     public void cerrarPuertas() {
         puertas = false;
-        System.out.println("Puertas cerradas");
+        System.out.println("🔴 Puertas CERRADAS - Subiendo/Bajando...");
     }
 
     // VALIDAR ACCIÓN
-    public int validarString(String s) {
+    private int validarString(String s) {
         if (s == null) return 0;
-        else if (s.equalsIgnoreCase("entrar")) return 1;
-        else if (s.equalsIgnoreCase("salir")) return -1;
-        else return 0;
+        return switch (s.toLowerCase()) {
+            case "entrar" -> 1;
+            case "salir" -> -1;
+            default -> 0;
+        };
     }
 
     // ENTRAR / SALIR PERSONA
-    public void entrarSalirPersona(String s, Persona p) {
-
+    public void entrarSalirPersona(String accion, Persona p) {
         if (!puertas) {
-            System.out.println("Las puertas están cerradas");
+            System.out.println("❌ ERROR: Las puertas están cerradas");
             return;
         }
 
-        if (validarString(s) == 1) { // ENTRAR
-            if ((ocupacion + p.getPeso()) <= capacidad) {
+        int dir = validarString(accion);
+        if (dir == 1) { // ENTRAR
+            if (ocupacion + p.getPeso() <= capacidad) {
                 ocupacion += p.getPeso();
-                System.out.println("Persona " + p.getId() + " entra (" + p.getPeso() + " kg)");
+                System.out.println("✅ Persona " + p.getId() + " entra (" + ocupacion + "/" + capacidad + " kg)");
             } else {
-                System.out.println("⚠ Exceso de peso, alarma activada");
+                System.out.println("🚨 EXCESO PESO: " + p.getPeso() + "kg");
                 activarAlarma(true);
             }
-
-        } else if (validarString(s) == -1) { // SALIR
+        } else if (dir == -1) { // SALIR
             ocupacion = 0;
-            System.out.println("Salen todas las personas");
+            System.out.println("👥 Todas las personas salen");
             activarAlarma(false);
-
         } else {
-            System.out.println("Acción no válida");
+            System.out.println("❓ Acción inválida: " + accion);
         }
     }
 
-    // MOVER ASCENSOR
+    // ⭐ MOVER ASCENSOR CON SLEEP MEJORADO ⭐
     public void moverAscensor(int destino) throws PisoExcepcion, InterruptedException {
-
         if (alarma) {
-            System.out.println("Ascensor bloqueado por alarma");
+            System.out.println("🚨 ALARMA: Ascensor bloqueado");
             return;
         }
 
         if (destino < 0 || destino > pisos) {
-            throw new PisoExcepcion(
-                String.format("El piso definido no existe, las plantas son de la 0 a la %d", pisos)
-            );
+            throw new PisoExcepcion("Piso inválido: " + destino + 
+                " (válidos: 0-" + pisos + ")");
         }
 
+        System.out.println("📍 Saliendo piso " + piso + " → destino " + destino);
         cerrarPuertas();
 
+        // MOVIMIENTO PISO A PISO CON SLEEP
         while (piso != destino) {
             if (piso < destino) {
                 piso++;
+                System.out.println("⬆️  Pasando por piso: " + piso);
             } else {
                 piso--;
+                System.out.println("⬇️  Pasando por piso: " + piso);
             }
-
-            System.out.println("Ascensor pasando por piso: " + piso);
-            Thread.sleep(500);
+            
+            // ⭐ SLEEP: Simula tiempo real (0.8s por piso)
+            Thread.sleep(800);
         }
 
+        System.out.println("🎯 Llegado a piso " + piso);
         abrirPuertas();
     }
 
     // ALARMA
     public void activarAlarma(boolean activar) {
         alarma = activar;
+        System.out.println(alarma ? "🚨 ALARMA ACTIVADA" : "✅ Alarma desactivada");
     }
     
     public void salirTodasLasPersonas() {
-    ocupacion = 0;
-    alarma = false;
+        ocupacion = 0;
+        System.out.println("👥 Emergencia: Todos salen");
+        activarAlarma(false);
     }
-
 }
